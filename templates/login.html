@@ -1,15 +1,30 @@
-<h1>Fit Track App</h1>
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Fit Track App</title>
+        
+        <link rel="stylesheet" type="text/css" href="style.css">
+    </head>
 
-<form action="main" method="POST">
-    <label for="user">Login:</label>
-    <input type="text" name="user"  value="" required>
-    <br><br>
+    <body>
+        <h1>Fit Track App</h1>
 
-    <label for="pwd">Password:</label>
-    <input type="password" name="pwd" value="" required>
-    <br><br>
+        <form action="main" method="POST">
+            <label for="user">Login:</label>
+            <input type="text" name="user"  value="" required>
+            <br><br>
 
-    <input type="submit" value="login"> 
-</form>
+            <label for="pwd">Password:</label>
+            <input type="password" name="pwd" value="" required>
+            <br><br>
 
-<p style="color:red;">{{ error }}</p>
+            <input type="submit" value="login"> 
+        </form>
+
+        <p style="color:red;">{{ error }}</p>
+    </body>
+
+</html>    

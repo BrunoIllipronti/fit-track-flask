@@ -23,12 +23,18 @@ def login():
 
             cursor = conn.cursor()
 
-            query = 'SELECT * FROM public."Person" WHERE username = ' + "'" + user + "'" + ' AND pwd = ' + "'" + pwd + "'"           
+            query = 'SELECT person_id, first_name, last_name FROM public."Person" WHERE username = ' + "'" + user + "'" + ' AND pwd = ' + "'" + pwd + "'"           
             cursor.execute(query)
             rs = cursor.fetchall()            
 
             if len(rs) > 0:
-                return render_template('main.html', data=rs)
+                user_id   = rs[0] # Gets user ID after login validation
+                user_name = str(rs[0][1]).strip() + ' ' + str(rs[0][2]).strip() # Gets First Name / Last Name after login validation
+                query = 'SELECT * FROM public."Results" WHERE person_id = ' + "'" + str(user_id[0]) + "'"           
+                cursor.execute(query)
+                rs = cursor.fetchall()
+
+                return render_template('main.html', data=rs, user=user_name)
             else:
                 return render_template('login.html', error='Invalid user / Incorrect Password')           
 

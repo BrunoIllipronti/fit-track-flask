@@ -1,0 +1,222 @@
+/* ####################### BODY STYLE ####################### */
+body {
+    margin: auto;
+    background: white;
+    border-radius: 10px;
+    border: solid black;
+    border-width: thin;
+
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 10px;
+
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+    -webkit-box-shadow: 0 0 9px gray;
+    box-shadow: 0 0 18px gray;
+}
+
+
+.button {
+    background: #0066A2;
+    color: white;
+    border-style: outset;
+    border-color: #0066A2;
+    height: 30px;
+    width: 120px;
+    font: bold 15px arial, sans-serif;
+    text-shadow:none;
+    border-radius: 4px;
+}
+
+.button:hover {
+    background-color: #008CBA;
+    color: white;
+    opacity: 1
+}
+
+/* ####################### BEGIN OF HEADER ####################### */
+.row .header_link {  padding-left: 50px; }
+
+.header_link:link, .header_link:visited {
+    font: bold 12px arial, sans-serif;
+    text-decoration: none;
+    background-color: #008CBA;
+    color: white;
+    padding: 3px 10px 3px 15px;
+    border-top: 1px solid #CCCCCC;
+    border-right: 1px solid #333333;
+    border-bottom: 1px solid #333333;
+    border-left: 1px solid #CCCCCC;
+    text-align: center;
+}
+
+.header_link:hover, .header_link:active {
+    background-color: #333333;
+}
+
+.header, .menu {
+    background-color: lightblue;
+}
+
+.row input[type=text], input[type=password], input[type=email], input[type=tel] {
+    background-color: #f8f8f8;
+    width: 180px;
+    border-radius: 5px;
+    /*float: right;
+    clear: both;*/
+}
+
+/*
+label {
+    display: inline-block;
+    width: 140px;
+    text-align: right;
+}​
+*/
+
+
+/* ####################### BEGIN OF FOOTER ####################### */
+.footer {
+    background-color: lightblue;
+}
+
+footer {
+    text-align: center;
+}
+footer ol{   margin: 5px;  }
+
+footer li{
+    display: inline;
+    list-style-type: none;
+    border-right: 1px solid #006699;
+    padding: 0 .75em;
+    color: white;
+    vertical-align: middle;
+}
+
+footer li:last-child  { border: 0; }
+footer li a{  text-decoration: none;  color: #FFF8DC;  }
+
+/* ####################### BEGIN OF HOME PAGE CONTENT CONTAINER ####################### */
+
+/* Main container */
+.container {
+    border: 3px ridge rgba(28,110,164,0.75);
+    outline: 3px ridge rgba(28,110,164,0.75);
+    outline-offset: 0px;
+    font-family: 'Roboto', sans-serif;
+    /*border-right: 1px solid;
+    border-left: 1px solid;
+    border-top: 1px solid;*/
+}
+
+.content_block {
+    background-color: lightgray;
+}
+
+/* Product Description block */
+.product_description {
+    width: 600px;
+}
+.table tr:nth-child(even) {background-color: #f2f2f2;} /* Zebra striping */
+.table th { background-color: CornflowerBlue ; }
+.table tr:hover { background-color: LemonChiffon ;  }  /* Hover over table rows */
+
+/* Posts block */
+.posts {
+    border-right: 1px solid;
+    border-left: 1px solid;
+    border-top: 1px solid;
+    border-bottom: 1px solid;
+
+    margin-left: 20px;
+    width: 350px;
+
+    border: 3px solid #555555;
+}
+
+/* ####################### BEGIN OF CONTACT PAGE ####################### */
+/* Product Description block */
+.contact_form {
+    width: 500px;
+}
+
+.contactpage_row {
+    background-color: lightgray;
+    padding-bottom: 20px;
+    padding-top:  20px;
+    padding-left: 20px;
+}
+
+/* ####################### BEGIN OF SHOW / EDIT / DELETE POST PAGE ####################### */
+
+.list-inline {
+    list-style: none;
+    padding: 0;
+}
+
+.list-inline > li {
+    display: inline;
+}
+
+.list-pipe > li:not(:last-child)::after {
+    content: "|";
+    margin: 0 .25em;
+}
+
+.showpost {
+    border-style: outset;
+    padding: 5px;
+    background-color: #f2f2f2;
+    border-width: 1px;
+    border-radius: 15px;
+}
+
+.postcontent {
+    border-style: outset;
+    border-left: 6px solid blue;
+    background-color: aliceblue;
+    margin: 10px;
+    padding: 5px;
+}
+
+/* ####################### BEGIN OF ACCOUNT PAGE ####################### */
+
+.tab table,
+td {
+    border: 1px solid #333;
+}
+
+.tab thead,
+tfoot {
+    background-color: #333;
+    color: #fff;
+}
+
+.tab input[type=text], .tab input[type=password] {
+    background-color: #f8f8f8;
+    width: 100px;
+    border-radius: 5px;
+}
+
+/* ####################### BEGIN OF WORK AREA ####################### */
+
+.worktab table,
+td {
+    border: 1px solid #333;
+}
+
+.worktab thead,
+tfoot {
+    background-color: #333;
+    color: #fff;
+}
+
+.worktab input[type=text], .worktab input[type=password] {
+    background-color: #f8f8f8;
+    width: 150px;
+    border-radius: 5px;
+}
