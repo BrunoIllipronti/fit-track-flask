@@ -1,0 +1,5 @@
+{
+    "python.pythonPath": "C:\\Users\\Illipronti\\.virtualenvs\\Fit-Track-App-nw69IEV0\\Scripts\\python.exe",
+    "appService.defaultWebAppToDeploy": "/subscriptions/9768b7f0-2823-4d99-a043-6685746833ef/resourceGroups/FitTrack/providers/Microsoft.Web/sites/fit-track",
+    "appService.deploySubpath": ""
+}

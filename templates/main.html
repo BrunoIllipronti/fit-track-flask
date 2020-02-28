@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+
     <title>Fit Track App</title>
 
-    <link rel="stylesheet" type="text/css" href="style.css">
-    <script type = "text/javascript" src = "https://d3js.org/d3.v4.min.js"></script>
+    <!-- <link rel="stylesheet" type="text/css" href="style.css">  -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
 
   </head>
   <body>
@@ -15,34 +15,59 @@
     <div id='container'>
         <h1>Welcome to FitTrack</h1>
 
+        <h2> {{ labels }}</h2>
         <h2> {{ data }}</h2>
-        <h2> {{ user }}</h2>
-
-        <h3>Chique</h3>
-
-        <h4></h4>
 
         <script>
-            alert(d3.select("h3").text());
-        
-            d3.select("h4")
-                .html("This is a D3 test")
-                .append('span')
-                .html("bitches");
+            var user          = "{{ user|safe }}"
+            var dates         = "{{ labels|safe }}".split(',')
+            var weigh_results = "{{ data|safe }}".split(',')     
+            console.log(dates)
+            console.log(weigh_results)
+            console.log(typeof dates);
+            console.log(typeof weigh_results);           
         </script>
-
-        <div id="viz">
-                <svg width="600" height="400" style="background: #93A1A1">
-                    <line />
-                </svg>
-        </div>
-    
-
     </div>
 
-    <script src="js/libraries/jquery/jquery.min.js"></script>
-    <script src="js/libraries/bootstrap/bootstrap.min.js"></script>
-    <script src="js/libraries/d3/d3.min.js"></script>
-    <script src="script.js"></script>
+    <div class="chart-container" style="padding-bottom: 190px;height:20vh; width:40vw">
+      <canvas id="myChart"></canvas>
+      <script>
+        var ctx = document.getElementById('myChart').getContext('2d');
+        var chart = new Chart(ctx, {
+            // The type of chart we want to create
+            type: 'line',
+
+            // The data for our dataset
+            data: {
+                labels: dates,
+                datasets: [{
+                    label: user, 
+                    //backgroundColor: 'rgb(0, 50, 132)',
+                    hoverBorderColor: 'rgb(0, 99, 132)',
+                    borderColor: 'rgb(255, 99, 132)',
+                    data: weigh_results
+                }]
+            },
+
+            // Configuration options go here
+            options: {
+              title: {
+                display: true,
+                text: 'Weigh by Weigh In Date - Fit Track'
+              }, 
+              scales: {
+                xAxes: [{
+                  offset: true,
+                }]
+              }
+            }
+        });
+      </script>
+    </div>
+    
+    <div>
+      <h1>Power BI Embedded Demo !</h1>
+      <iframe width="1140" height="541.25" src="https://app.powerbi.com/reportEmbed?reportId=fb39bfef-f235-4298-887a-5a1fc860a697&autoAuth=true&ctid=f5e8862b-5513-407a-9f7d-b67b33a9001a&config=eyJjbHVzdGVyVXJsIjoiaHR0cHM6Ly93YWJpLXVzLW5vcnRoLWNlbnRyYWwtcmVkaXJlY3QuYW5hbHlzaXMud2luZG93cy5uZXQvIn0%3D" frameborder="0" allowFullScreen="true"></iframe>
+    </div>  
   </body>
 </html>
